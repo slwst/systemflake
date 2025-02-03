@@ -69,7 +69,7 @@
           auto-format = true;
           comment-token = "//";
           #formatter.command = "${pkgs.gotools}/bin/goimports";
-          language-servers = [ "gopls" "golangci-lint-langserver" ];
+          language-servers = [ "lsp-ai" "gopls" "golangci-lint-langserver" ];
         }
         {
           name = "javascript";
@@ -121,6 +121,32 @@
         golangci-lint-langserver = {
           command = "${pkgs.golangci-lint-langserver}/bin/golangci-lint-langserver";
         };
+        lsp-ai = {
+          command = "lsp-ai";
+          config = {
+            completion = {
+              model = "model1";
+              parameters = {
+                max_tokens = 32;
+                max_context = 1024;
+                fim = {
+                  start = "<fim_prefix>";
+                  middle = "<fim_suffix>";
+                  end = "<fim_middle>";
+                };
+              };
+            };
+            memory = {
+              file_store = { };
+            };
+            models.model1 = {
+              type = "llama_cpp";
+              repository = "stabilityai/stable-code-3b";
+              name = "stable-code-3b-Q5_K_M.gguf";
+              n_ctx = 2048;
+            };
+          };
+        };
         nil = {
           command = lib.getExe pkgs.nil;
           config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
@@ -149,7 +175,10 @@
     java-language-server
     kotlin-language-server
     ktlint
+    #inputs.llama-cpp.packages.${pkgs.system}.default
+    llamaPackages.llama-cpp
     lldb
+    lsp-ai
     rust-analyzer
     rustfmt
     selene

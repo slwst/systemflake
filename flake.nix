@@ -5,6 +5,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     helix.url = "github:helix-editor/helix";
+    llama-cpp.url = "github:ggerganov/llama.cpp";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,6 +25,7 @@
     pyfa = {
       url = "path:/home/slwst/dev/nix/pyfa";
     };
+
   };
   outputs = {
     self,
@@ -39,11 +41,16 @@
       config = {
         allowBroken = true;
         allowUnfree = true;
+        cudaSupport = true;
+        cudaCapabilities = [ "8.9" ];
+        cudaForwardCompat = true;
         tarball-ttl = 0;
         permittedInsecurePackages = [
           "openssl-1.1.1w"
         ];
+        nvidia.acceptLicense = true;
       };
+      overlays = [ (inputs.llama-cpp.overlays.default) ];
     }; 
     in rec
     {

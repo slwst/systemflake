@@ -32,7 +32,7 @@
     #freecad
     fzf
     gh
-    gimp
+    #gimp
     glava
     glxinfo
     gucharmap

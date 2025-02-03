@@ -25,6 +25,7 @@ in {
       ];
     };
     programs.gamemode.enable = true;
+    hardware.steam-hardware.enable = true;
 
     boot.kernelParams = [
       "split_lock_detect=off"

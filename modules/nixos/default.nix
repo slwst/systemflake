@@ -4,4 +4,5 @@
   virtualization = import ./virtualization;
   windowManager = import ./windowManager;
   steam = import ./steam;
+  ai = import ./ai;
 }
