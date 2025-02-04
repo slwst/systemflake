@@ -50,7 +50,12 @@
         ];
         nvidia.acceptLicense = true;
       };
-      overlays = [ (inputs.llama-cpp.overlays.default) ];
+      overlays = [
+      (inputs.llama-cpp.overlays.default)
+      (final: prev: {
+        lsp-ai = final.callPackage ./pkgs/lsp-ai { };
+      })
+      ];
     }; 
     in rec
     {

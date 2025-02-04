@@ -59,6 +59,7 @@
     mumble
     neo
     neofetch
+    nethogs
     nitch
     nvitop
     obs-studio

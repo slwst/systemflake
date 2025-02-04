@@ -3,7 +3,13 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+/*
+ let
+  mylsp-ai = (pkgs.lsp-ai.overrideAttrs (oldAttrs: { buildFeatures = ["llama_cpp"];}));
+in
+*/
+ {
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
@@ -69,11 +75,15 @@
           auto-format = true;
           comment-token = "//";
           #formatter.command = "${pkgs.gotools}/bin/goimports";
-          language-servers = [ "lsp-ai" "gopls" "golangci-lint-langserver" ];
+          language-servers = [ "lsp-ai" "gopls" ];
         }
         {
           name = "javascript";
           auto-format = true;
+        }
+        {
+          name = "markdown";
+          language-servers = [ "lsp-ai" ];
         }
         {
           name = "rust";
@@ -100,6 +110,7 @@
             usePlaceholders = true;
             completeUnimported = true;
             verboseOutput = true;
+            /*
             analyses = {
               fieldalignment = true;
               nilness = true;
@@ -107,6 +118,7 @@
               unusuedwrite = true;
               useany = true;
             };
+            */
             hints = {
               assignVariableType = true;
               compositeLiteralFields = true;
@@ -118,14 +130,16 @@
             };
           };
         };
+        /*
         golangci-lint-langserver = {
           command = "${pkgs.golangci-lint-langserver}/bin/golangci-lint-langserver";
         };
+        */
         lsp-ai = {
           command = "lsp-ai";
           config = {
             completion = {
-              model = "model1";
+              model = "completionModel";
               parameters = {
                 max_tokens = 32;
                 max_context = 1024;
@@ -139,11 +153,21 @@
             memory = {
               file_store = { };
             };
-            models.model1 = {
-              type = "llama_cpp";
-              repository = "stabilityai/stable-code-3b";
-              name = "stable-code-3b-Q5_K_M.gguf";
-              n_ctx = 2048;
+            models = {
+              completionModel = {
+                type = "llama_cpp";
+                repository = "stabilityai/stable-code-3b";
+                name = "stable-code-3b-Q5_K_M.gguf";
+                n_ctx = 2048;
+                n_gpu_layers = 1000;
+              };
+              chatModel = {
+                type = "llama_cpp";
+                repository = "bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF";
+                name = "DeepSeek-R1-Distill-Qwen-32B-IQ4_XS.gguf";
+                n_ctx = 2048;
+                n_gpu_layers = 1000;
+              };
             };
           };
         };
