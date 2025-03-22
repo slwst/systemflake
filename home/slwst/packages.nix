@@ -14,7 +14,7 @@
     gsettings-desktop-schemas
     appimage-run
     bandwhich
-    blender
+    #blender
     bluetuith
     bottles
     brave
@@ -32,6 +32,7 @@
     #freecad
     fzf
     gh
+    ghidra
     #gimp
     glava
     glxinfo

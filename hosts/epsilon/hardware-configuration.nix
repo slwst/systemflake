@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -62,6 +61,12 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
+  };
+
+  fileSystems."/games" = {
+    device = "/dev/disk/by-label/games";
+    fsType = "btrfs";
+    options = ["compress=zstd" "noatime" "ssd" "space_cache=v2"];
   };
 #       Option "AllowIndirectGXProtocol" "off"
   services.xserver = {

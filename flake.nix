@@ -52,9 +52,11 @@
       };
       overlays = [
       (inputs.llama-cpp.overlays.default)
+      /*
       (final: prev: {
         lsp-ai = final.callPackage ./pkgs/lsp-ai { };
       })
+      */
       ];
     }; 
     in rec

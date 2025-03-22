@@ -4,9 +4,10 @@
   cudaPackages,
   rustPlatform,
   fetchFromGitHub,
-  stdenv,
+  #stdenv,
   darwin,
   pkg-config,
+  gcc11Stdenv,
   cmake,
   llvmPackages,
   openssl,
@@ -15,7 +16,13 @@
   gitUpdater,
   autoAddDriverRunpath,
   useCuda ? config.cudaSupport,
+  stdenv ? if useCuda then cudaPackages.backendStdenv else stdenv,
 }:
+/*
+let
+  stdenv = gcc11Stdenv;
+in
+*/
 
 rustPlatform.buildRustPackage rec {
   pname = "lsp-ai";
