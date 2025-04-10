@@ -15,7 +15,7 @@
     ./modules/desktop
   ];
   config.modules = {
-    windowManager.i3.enable = true;
-    windowManager.sway.enable = false;
+    windowManager.i3.enable = false;
+    windowManager.sway.enable = true;
   };
 }

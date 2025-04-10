@@ -5,7 +5,6 @@
   ...
 }: {
   services.polybar = {
-    enable = true;
     package = pkgs.polybar.override {
       pulseSupport = true;
       i3Support = true;

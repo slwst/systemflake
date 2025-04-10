@@ -72,7 +72,7 @@
     protonup
     pulseaudio
     psmisc
-    inputs.pyfa.packages.${system}.pyfa
+    #inputs.pyfa.packages.${system}.pyfa
     razergenie
     ripgrep
     rsync

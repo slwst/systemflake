@@ -86,7 +86,7 @@ in {
       config.common.default = "*";
       xdgOpenUsePortal = true;
       extraPortals = [
-        pkgs.xdg-desktop-portal-kde
+        pkgs.kdePackages.xdg-desktop-portal-kde
       ];
     };
     qt = {

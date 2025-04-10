@@ -197,7 +197,7 @@ in {
           # Screenshots (Clipboard)
           "Ctrl+Print" = "exec --no-startup-id maim | xclip -selection clipboard -t image/png";
           "Ctrl+${modifier}+Print" = "exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png";
-          "Ctrl+Shift+Print" = "exec --no-startup-id maim --select | xclip -selection clipboard -t image/png";
+          "Ctrl+Shift+Print" = "exec --no-startup-id grim -g \"$(slurp)\" - | wl-copy";
 
           # Blink window with focus
           "${modifier}+z" = "exec i3-msg border pixel 1";

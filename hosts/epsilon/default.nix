@@ -104,11 +104,11 @@
     };
 
     windowManager.i3 = {
-      enable = true;
+      enable = false;
       layout = "us";
     };
     windowManager.sway = {
-      enable = false;
+      enable = true;
     };
   };
 
