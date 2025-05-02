@@ -103,6 +103,10 @@
       };
     };
 
+    windowManager.hyprland = {
+      enable = false;
+    };
+
     windowManager.i3 = {
       enable = false;
       layout = "us";

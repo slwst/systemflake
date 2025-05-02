@@ -15,6 +15,7 @@
     ./modules/desktop
   ];
   config.modules = {
+    #windowManager.hyprland.enable = false;
     windowManager.i3.enable = false;
     windowManager.sway.enable = true;
   };

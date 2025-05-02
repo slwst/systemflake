@@ -12,15 +12,18 @@ in {
   };
 
   config = mkIf cfg.enable {
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = false;
       protontricks.enable = true;
-      gamescopeSession.enable = false;
+      gamescopeSession.enable = true;
       extraPackages = with pkgs; [
         mumble
-        #gamescope
         openssl_1_1
       ];
     };
@@ -46,6 +49,7 @@ in {
         SDL2
         protontricks
         lutris
+        mangohud
         wine
         wine64
         winetricks

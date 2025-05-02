@@ -210,13 +210,21 @@ in {
     enable = true;
     profiles.default.outputs = [
       {
+        criteria = "ASUSTek COMPUTER INC PG39WCDM S5LMTF202563";
+        mode = "3440x1440@240Hz";
+        position = "0,0";
+        adaptiveSync = true;
+      }
+      /*
+      {
         criteria = "Ancor Communications Inc ROG PG348Q #ASPjnRq62OXd";
         mode = "3440x1440@100Hz";
         position = "0,0";
         adaptiveSync = true;
       }
+      */
       {
-        criteria = "LG Electronics 27EA83R 0x00000101";
+        criteria = "LG Electronics 27EA83R 0x01010101";
         mode = "2560x1440@60Hz";
         position = "3440,0";
       }
