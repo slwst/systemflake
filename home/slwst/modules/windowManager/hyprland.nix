@@ -13,6 +13,12 @@ in {
   };
 
   config = mkIf cfg.enable ({
+    modules.desktop.services.waybar-hypr.enable = true;
+    catppuccin.hyprland = {
+      enable = true;
+      flavor = "macchiato";
+      accent = "teal";
+    };
     wayland.windowManager.hyprland = {
       enable = true;
       # electron wayland hint
@@ -34,6 +40,8 @@ in {
         xwayland = {
           force_zero_scaling = true;
         };
+
+        exec-once = ["waybar"];
 
         general = {
           gaps_in = 6;
@@ -187,7 +195,7 @@ in {
           # Applications
           "$mod ALT, e, exec, $terminal --hold -e ${pkgs.yazi}/bin/yazi"
           "$mod ALT, f, exec, ${pkgs.firefox}/bin/firefox"
-          "$mod, r, exec, pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
+          "$mod, d, exec, pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
           #"$mod ALT, r, exec, pkill anyrun || ${pkgs.anyrun}/bin/anyrun"
           #"$mod ALT, n, exec, swaync-client -t -sw"
 
@@ -197,15 +205,28 @@ in {
           # Screencapture
           #"$mod, S, exec, ${pkgs.grim}/bin/grim | wl-copy"
           #"$mod SHIFT+ALT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | ${pkgs.swappy}/bin/swappy -f -"
+
         ];
         bindm = [
             "$mod, mouse:272, movewindow"
             "$mod, mouse:273, resizewindow"
         ];
+
+        #audio
+        bindel = [
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ];
+        bindl = [
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ", XF86AudioPlay, exec, playerctl play-pause"
+          ", XF86AudioPrev, exec, playerctl previous"
+          ", XF86AudioNext, exec, playerctl next"
+        ];
       };
     };
     programs.eww = {
-      enable = true;
+      enable = false;
       enableFishIntegration = true;
     };
     programs.wofi.enable = true;
@@ -229,25 +250,29 @@ in {
     };
     services.kanshi = {
       enable = true;
-      profiles.default.outputs = [
-        {
-          criteria = "ASUSTek COMPUTER INC PG39WCDM S5LMTF202563";
-          mode = "3440x1440@240Hz";
-          position = "0,0";
-          adaptiveSync = true;
-        }
-        /*
-        {
-          criteria = "Ancor Communications Inc ROG PG348Q #ASPjnRq62OXd";
-          mode = "3440x1440@100Hz";
-          position = "0,0";
-          adaptiveSync = true;
-        }
-        */
-        {
-          criteria = "LG Electronics 27EA83R 0x01010101";
-          mode = "2560x1440@60Hz";
-          position = "3440,0";
+      settings = [
+        { profile.name = "default";
+          profile.outputs = [
+            {
+              criteria = "ASUSTek COMPUTER INC PG39WCDM S5LMTF202563";
+              mode = "3440x1440@240Hz";
+              position = "0,0";
+              adaptiveSync = true;
+            }
+            /*
+            {
+              criteria = "Ancor Communications Inc ROG PG348Q #ASPjnRq62OXd";
+              mode = "3440x1440@100Hz";
+              position = "0,0";
+              adaptiveSync = true;
+            }
+            */
+            {
+              criteria = "LG Electronics 27EA83R 0x01010101";
+              mode = "2560x1440@60Hz";
+              position = "3440,0";
+            }
+          ];
         }
       ];
     };

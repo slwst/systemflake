@@ -76,7 +76,7 @@
     '';
     xrandrHeads = [
       {
-        output = "DP-0";
+        output = "DP-1";
         primary = true;
       }
     ];

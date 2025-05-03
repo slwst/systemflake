@@ -18,6 +18,8 @@ in {
       wl-clipboard
       slurp
       grim
+      xorg.xrandr
+      hyprland-qt-support
     ];
 
     programs.hyprland = {
@@ -29,6 +31,7 @@ in {
     services = {
       xserver = {
         videoDrivers = ["nvidia"];
+#        displayManager.setupCommands = "";
       };
       displayManager = {
         sddm = {
@@ -44,18 +47,22 @@ in {
             };
           };
           */
-          catppuccin = {
-            enable = true;
-            assertQt6Sddm = true;
-            flavor = "macchiato";
-            font = "VictorMono Nerd Font";
-            fontSize = "12";
-            loginBackground = true;
-          };
+          setupScript = ''
+            xrandr --output DP-1 --auto --primary
+            xrandr --output HDMI-A-1 --brightness 0
+          '';
         };
       };
     };
     security.pam.services.lightdm.u2fAuth = true;
+    catppuccin.sddm = {
+      enable = true;
+      assertQt6Sddm = true;
+      flavor = "macchiato";
+      font = "VictorMono Nerd Font";
+      fontSize = "12";
+      loginBackground = true;
+    };
     environment = {
       variables = {
         NIXOS_OZONE_WL = "1";
