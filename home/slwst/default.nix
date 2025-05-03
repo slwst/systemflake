@@ -1,11 +1,9 @@
 {
-  config,
-  outputs,
-  pkgs,
-  lib,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.catppuccin.homeModules.catppuccin
     ./home.nix
     ./packages.nix
 
@@ -15,8 +13,8 @@
     ./modules/desktop
   ];
   config.modules = {
-    #windowManager.hyprland.enable = false;
+    windowManager.hyprland.enable = true;
     windowManager.i3.enable = false;
-    windowManager.sway.enable = true;
+    windowManager.sway.enable = false;
   };
 }

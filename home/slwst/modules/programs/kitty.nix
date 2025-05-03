@@ -24,6 +24,6 @@
       # Display
       sync_to_monitor = true;
     };
-    themeFile = "Catppuccin-Frappe";
+    #themeFile = "Catppuccin-Frappe";
   };
 }

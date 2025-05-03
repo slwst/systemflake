@@ -15,7 +15,7 @@ in
     package = inputs.helix.packages.${pkgs.system}.default;
 
     settings = {
-      theme = "catppuccin_frappe_transparent";
+      #theme = "catppuccin_frappe_transparent";
       keys.normal = {
         j = "move_char_left";
         k = "move_line_down";
@@ -50,12 +50,12 @@ in
         };
       };
     };
-    themes = {
-      catppuccin_frappe_transparent = {
-        "inherits" = "catppuccin_frappe";
-        "ui.backround" = "{}";
-      };
-    };
+    #themes = {
+    #  catppuccin_frappe_transparent = {
+    #    "inherits" = "catppuccin_frappe";
+    #    "ui.backround" = "{}";
+    #  };
+    #};
     languages = {
       language = [
         {

@@ -6,6 +6,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     helix.url = "github:helix-editor/helix";
     llama-cpp.url = "github:ggerganov/llama.cpp";
+    catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -22,6 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.rust-overlay.follows = "rust-overlay";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
     /*
     pyfa = {
       url = "path:/home/slwst/dev/nix/pyfa";
@@ -32,6 +34,7 @@
   outputs = {
     self,
     nixpkgs,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;

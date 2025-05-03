@@ -104,7 +104,7 @@
     };
 
     windowManager.hyprland = {
-      enable = false;
+      enable = true;
     };
 
     windowManager.i3 = {
@@ -112,7 +112,7 @@
       layout = "us";
     };
     windowManager.sway = {
-      enable = true;
+      enable = false;
     };
   };
 

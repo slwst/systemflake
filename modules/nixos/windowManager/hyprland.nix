@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   lib,
@@ -12,11 +13,18 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.wl-clipboard
-      pkgs.slurp
-      pkgs.grim
+
+    environment.systemPackages = with pkgs; [
+      wl-clipboard
+      slurp
+      grim
     ];
+
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
 
     services = {
       xserver = {
@@ -35,7 +43,7 @@ in {
               SessionDir = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
             };
           };
-          /*
+          */
           catppuccin = {
             enable = true;
             assertQt6Sddm = true;
@@ -44,7 +52,6 @@ in {
             fontSize = "12";
             loginBackground = true;
           };
-          */
         };
       };
     };
