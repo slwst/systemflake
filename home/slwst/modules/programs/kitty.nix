@@ -26,4 +26,21 @@
     };
     #themeFile = "Catppuccin-Frappe";
   };
+  home.file."sysmon" = {
+    target = ".config/kitty/sysmon.session";
+    text = ''
+      layout splits
+      launch htop
+      launch --location=vsplit nvitop
+      launch hyprctl dispatch "layoutmsg preselect d"
+      launch hyprctl keyword "dwindle:default_split_ratio 1.7"
+      launch hyprctl dispatch "exec glava"
+      launch hyprctl keyword "dwindle:default_split_ratio 1.0"
+      launch hyprctl dispatch "layoutmsg preselect r"
+    '';
+  };
 }
+
+
+#      launch hyprctl dispatch "focuswindow class:GLava"
+#      launch hyprctl dispatch "resizeactive exact 100% 16%"

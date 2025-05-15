@@ -14,11 +14,19 @@ in {
 
   config = mkIf cfg.enable ({
     modules.desktop.services.waybar-hypr.enable = true;
-    catppuccin.hyprland = {
-      enable = true;
-      flavor = "macchiato";
-      accent = "teal";
+    catppuccin = {
+      hyprland = {
+        enable = true;
+        flavor = "macchiato";
+        accent = "teal";
+      };
+      fuzzel = {
+        enable = true;
+        flavor = "macchiato";
+        accent = "teal";
+      };
     };
+    programs.fuzzel.enable = true;
     wayland.windowManager.hyprland = {
       enable = true;
       # electron wayland hint
@@ -35,7 +43,7 @@ in {
 
         monitor = [
           "DP-1, 3440x1440@240, 0x0, 1"
-          "HDMI-A-1, 1920x1080@60, 3440x0, 1"
+          "HDMI-A-1, 2560x1440@60, 3440x0, 1"
         ];
         xwayland = {
           force_zero_scaling = true;
@@ -49,6 +57,7 @@ in {
           border_size = 2;
           layout = "dwindle";
           allow_tearing = true;
+          "col.active_border" = "0xff00ffff";
         };
 
         input = {
@@ -128,6 +137,7 @@ in {
 
         dwindle = {
           pseudotile = true;
+          permanent_direction_override = true;
           preserve_split = true;
           #no_gaps_when_only = 0;
           smart_split = false;
@@ -137,6 +147,7 @@ in {
         misc = {
           disable_hyprland_logo = true;
           disable_splash_rendering = true;
+          vrr = 3;
         };         
         bind = [
           # General
@@ -158,6 +169,9 @@ in {
           "$mod CTRL, k, resizeactive, 0 20"
 
           # Workspaces
+          "$mod, t, workspace, name:"
+          "$mod, b, workspace, name:"
+          "$mod ALT, s, workspace, name:"
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
           "$mod, 3, workspace, 3"
@@ -170,6 +184,9 @@ in {
           "$mod, 0, workspace, 10"
 
           # Move to workspaces
+          "$mod SHIFT, t, movetoworkspace, name:"
+          "$mod SHIFT, b, movetoworkspace, name:"
+          "$mod SHIFT_ALT, s, movetoworkspace, name:"
           "$mod SHIFT, 1, movetoworkspace,1"
           "$mod SHIFT, 2, movetoworkspace,2"
           "$mod SHIFT, 3, movetoworkspace,3"
@@ -180,6 +197,17 @@ in {
           "$mod SHIFT, 8, movetoworkspace,8"
           "$mod SHIFT, 9, movetoworkspace,9"
           "$mod SHIFT, 0, movetoworkspace,10"
+
+          # Window Movement
+          "$mod SHIFT, j, movewindow, l"
+          "$mod SHIFT, apostrophe, movewindow, r"
+          "$mod SHIFT, l, movewindow, u"
+          "$mod SHIFT, k, movewindow, d"
+
+          "$mod SHIFT, left, movewindow, l"
+          "$mod SHIFT, right, movewindow, r"
+          "$mod SHIFT, up, movewindow, u"
+          "$mod SHIFT, down, movewindow, d"
 
           # Navigation
           "$mod, j, movefocus, l"
@@ -195,6 +223,7 @@ in {
           # Applications
           "$mod ALT, e, exec, $terminal --hold -e ${pkgs.yazi}/bin/yazi"
           "$mod ALT, f, exec, ${pkgs.firefox}/bin/firefox"
+          "$mod ALT, v, exec, pkill pavucontrol || pavucontrol"
           "$mod, d, exec, pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
           #"$mod ALT, r, exec, pkill anyrun || ${pkgs.anyrun}/bin/anyrun"
           #"$mod ALT, n, exec, swaync-client -t -sw"
@@ -222,6 +251,23 @@ in {
           ", XF86AudioPlay, exec, playerctl play-pause"
           ", XF86AudioPrev, exec, playerctl previous"
           ", XF86AudioNext, exec, playerctl next"
+        ];
+        windowrule = [
+          "float, class:org.pulseaudio.pavucontrol"
+          "size 1024 576, class:org.pulseaudio.pavucontrol"
+          "noblur on, class:steam"
+          "opacity 1.0, class:steam"
+          "noblur on, class:firefox"
+          "opacity 1.0, class:firefox"
+        ];
+
+        layerrule = [
+          "blur, waybar"
+        ];
+        workspace = [
+          "name:, on-created-empty:kitty, monitor:DP-1, default:true"
+          "name:, on-created-empty:kitty --session sysmon.session, monitor:HDMI-A-1, default:true"
+          "name:, on-created-empty:steam, monitor:DP-1"
         ];
       };
     };

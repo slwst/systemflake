@@ -2,14 +2,20 @@
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
-    "all-outputs": true,
-    "format": "{}",
+    "all-outputs": false,
+    "format": "{name}",
     "format-icons": {
       "urgent": "",
       "active": "",
       "default": ""
     },
     "persistent-workspaces": {
+      "DP-1": [
+        ""
+      ],
+      "HDMI-A-1": [
+        ""
+      ],
       "*": 5
     }
   },

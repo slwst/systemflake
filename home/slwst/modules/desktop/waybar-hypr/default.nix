@@ -6,9 +6,10 @@
 }:
 with lib; let
   cfg = config.modules.desktop.services.waybar-hypr;
-  waybar-hardware = builtins.fromJSON (builtins.readFile ./waybar-hardware.json);
-  waybar-modules = builtins.fromJSON (builtins.readFile ./waybar-modules.json);
-  waybar-quicklinks = builtins.fromJSON (builtins.readFile ./waybar-quicklinks.json);
+  hardware = builtins.fromJSON (builtins.readFile ./hardware.json);
+  modules = builtins.fromJSON (builtins.readFile ./modules.json);
+  sound = builtins.fromJSON (builtins.readFile ./sound.json);
+  quicklinks = builtins.fromJSON (builtins.readFile ./quicklinks.json);
 in {
   options.modules.desktop.services.waybar-hypr = {
     enable = mkEnableOption "Adds waybar for more bar in your way";
@@ -27,9 +28,9 @@ in {
           position = "top";
           height = 16;
           spacing = 8;
-          margn-top = 8;
-          margn-left = 8;
-          margn-right = 8;
+          margin-top = 8;
+          margin-left = 8;
+          margin-right = 8;
           mode = "dock";
           output = [
             "DP-1"
@@ -37,9 +38,9 @@ in {
           ];
           modules-left = [ "group/quicklinks" "tray" "hyprland/window" ];
           modules-center = [ "hyprland/workspaces" ];
-          modules-right = [ "network" "group/hardware" "clock" "custom/notification" ];
+          modules-right = [ "network" "group/sound" "group/hardware" "clock" "custom/notification" ];
 
-        } // waybar-hardware // waybar-modules // waybar-quicklinks;
+        } // hardware // modules // quicklinks // sound;
       };
       style = (builtins.readFile ./waybar.css);
     };
