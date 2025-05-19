@@ -79,6 +79,7 @@
         output = "DP-1";
         primary = true;
       }
+      "HDMI-A-1"
     ];
   };
 
