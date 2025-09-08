@@ -37,7 +37,7 @@
       package = pkgs.bluez;
     };
     i2c.enable = true;
-    openrazer.enable = true;
+    openrazer.enable = false;
 
   };
 

@@ -45,8 +45,10 @@
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;
+      download-buffer-size = 524288000;
       trusted-users = ["root" "@wheel"];
-      max-jobs = "auto";
+      cores = 6;
+      max-jobs = 2;
       # configure cache endpoints
       sandbox = true;
       substituters = [

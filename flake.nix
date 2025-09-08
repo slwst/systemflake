@@ -24,11 +24,9 @@
       inputs.rust-overlay.follows = "rust-overlay";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    /*
     pyfa = {
       url = "path:/home/slwst/dev/nix/pyfa";
     };
-    */
 
   };
   outputs = {
@@ -46,7 +44,7 @@
       config = {
         allowBroken = true;
         allowUnfree = true;
-        cudaSupport = true;
+        cudaSupport = false;
         cudaCapabilities = [ "8.9" ];
         cudaForwardCompat = true;
         tarball-ttl = 0;

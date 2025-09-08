@@ -5,6 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
+    aider-chat
     alsa-lib
     alsa-plugins
     alsa-tools
@@ -14,7 +15,7 @@
     gsettings-desktop-schemas
     appimage-run
     bandwhich
-    #blender
+    blender
     bluetuith
     bottles
     brave
@@ -27,6 +28,7 @@
     (discord.override {
       withOpenASAR = true;
     })
+    dualsensectl
     fd
     ffmpeg-full
     #freecad
@@ -39,13 +41,14 @@
     gucharmap
     gnome-power-manager
     nautilus
+    nh
     sushi
     goverlay
     google-cloud-sdk
     kubernetes-helm
     imagemagick
     jq
-    #kicad #currently broken in unstable
+    kicad #currently broken in unstable
     libpng
     librecad
     libreoffice-fresh
@@ -72,8 +75,8 @@
     protonup
     pulseaudio
     psmisc
-    #inputs.pyfa.packages.${system}.pyfa
-    razergenie
+    inputs.pyfa.packages.${system}.pyfa
+    #razergenie
     ripgrep
     rsync
     session-desktop
@@ -82,7 +85,7 @@
     strace
     #stress
     s-tui
-    teamspeak_client
+    #teamspeak_client # qtwebengine insecure
     tree
     ttyper
     unzip
@@ -92,7 +95,6 @@
     xdg-user-dirs
     xdg-utils
     yubikey-personalization
-    yubikey-personalization-gui
     yubico-piv-tool
   ];
 }

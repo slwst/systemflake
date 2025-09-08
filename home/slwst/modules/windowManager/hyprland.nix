@@ -171,7 +171,8 @@ in {
           # Workspaces
           "$mod, t, workspace, name:"
           "$mod, b, workspace, name:"
-          "$mod ALT, s, workspace, name:"
+          "$mod CTRL, s, workspace, name:"
+          "$mod CTRL, f, workspace, name:󰈹"
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
           "$mod, 3, workspace, 3"
@@ -186,6 +187,7 @@ in {
           # Move to workspaces
           "$mod SHIFT, t, movetoworkspace, name:"
           "$mod SHIFT, b, movetoworkspace, name:"
+          "$mod SHIFT_ALT, f, movetoworkspace, name:󰈹"
           "$mod SHIFT_ALT, s, movetoworkspace, name:"
           "$mod SHIFT, 1, movetoworkspace,1"
           "$mod SHIFT, 2, movetoworkspace,2"
@@ -259,12 +261,16 @@ in {
           "opacity 1.0, class:steam"
           "noblur on, class:firefox"
           "opacity 1.0, class:firefox"
+          "tile, title:EVE"
+          "opaque, title:(.*)(EVE)(.*)$"
+          "opaque, title:(.*)(Firefox)$"
         ];
 
         layerrule = [
           "blur, waybar"
         ];
         workspace = [
+          "name:󰈹, on-created-empty:${pkgs.firefox}/bin/firefox, monitor:HDMI-A-1, default:true"
           "name:, on-created-empty:kitty, monitor:DP-1, default:true"
           "name:, on-created-empty:kitty --session sysmon.session, monitor:HDMI-A-1, default:true"
           "name:, on-created-empty:steam, monitor:DP-1"

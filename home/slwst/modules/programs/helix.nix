@@ -193,7 +193,6 @@ in
     golangci-lint-langserver
     gomodifytags
     gopkgs
-    gopls
     gotests
     gotools
     java-language-server

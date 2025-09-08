@@ -1,16 +1,4 @@
 {pkgs, ...}: {
-  catppuccin.gtk = {
-    enable = true;
-    flavor = "macchiato";
-    accent = "teal";
-    /*
-    icon = {
-      enable = true;
-      flavor = "macchiato";
-      accent = "teal";
-    };
-    */
-  };
   gtk = {
     enable = true;
     /*

@@ -14,6 +14,7 @@
     udev.packages = with pkgs; [
       gnome-settings-daemon
       yubikey-personalization
+      game-devices-udev-rules
     ];
   };
 
