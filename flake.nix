@@ -5,7 +5,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     helix.url = "github:helix-editor/helix";
-    llama-cpp.url = "github:ggerganov/llama.cpp";
+    #llama-cpp.url = "github:ggerganov/llama.cpp";
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
@@ -27,12 +27,13 @@
     pyfa = {
       url = "path:/home/slwst/dev/nix/pyfa";
     };
-
+    blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/1.0.18";
   };
   outputs = {
     self,
     nixpkgs,
     catppuccin,
+    blender-bin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -44,9 +45,9 @@
       config = {
         allowBroken = true;
         allowUnfree = true;
-        cudaSupport = false;
+        cudaSupport = true;
         cudaCapabilities = [ "8.9" ];
-        cudaForwardCompat = true;
+        cudaForwardCompat = false;
         tarball-ttl = 0;
         permittedInsecurePackages = [
           "openssl-1.1.1w"
@@ -54,12 +55,12 @@
         nvidia.acceptLicense = true;
       };
       overlays = [
-      (inputs.llama-cpp.overlays.default)
-      /*
+        blender-bin.overlays.default
+      #(inputs.llama-cpp.overlays.default)
       (final: prev: {
-        lsp-ai = final.callPackage ./pkgs/lsp-ai { };
+        #lsp-ai = final.callPackage ./pkgs/lsp-ai { };
+        blender-bin = blender-bin.packages.${system}.default;
       })
-      */
       ];
     }; 
     in rec

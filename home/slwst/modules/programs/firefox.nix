@@ -10,6 +10,7 @@
 
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-bin;
     profiles = {
       slwst = {
         id = 0;

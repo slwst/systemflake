@@ -1,6 +1,11 @@
 {
+  pkgs,
+  ...
+}:
+  {
   programs.thunderbird = {
     enable = true;
+    package = pkgs.thunderbird-bin;
     profiles = {
       slwst = {
         isDefault = true;

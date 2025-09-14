@@ -34,6 +34,7 @@
       goflake = "nix flake init -t github:nix-community/gomod2nix#app";
       nrs = "sudo nixos-rebuild switch --flake ~/.systemflake#";
       nrsi = "sudo nixos-rebuild switch --flake ~/.systemflake# --impure";
+      nhoss = "nh os switch ~/.systemflake#";
     };
     shellAliases = {
       cat = "bat";

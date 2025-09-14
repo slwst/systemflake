@@ -49,8 +49,8 @@ in {
           };
           */
           setupScript = ''
+            xrandr --output HDMI-0 --off
             xrandr --output DP-1 --auto --primary
-            xrandr --output HDMI-A-1 --brightness 0
           '';
         };
       };

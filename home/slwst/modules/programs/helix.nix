@@ -138,6 +138,7 @@ in
         lsp-ai = {
           command = "lsp-ai";
           config = {
+            /*
             completion = {
               model = "completionModel";
               parameters = {
@@ -150,9 +151,11 @@ in
                 };
               };
             };
+            */
             memory = {
               file_store = { };
             };
+            /*
             models = {
               completionModel = {
                 type = "llama_cpp";
@@ -169,6 +172,7 @@ in
                 n_gpu_layers = 1000;
               };
             };
+            */
           };
         };
         nil = {
@@ -199,7 +203,7 @@ in
     kotlin-language-server
     ktlint
     #inputs.llama-cpp.packages.${pkgs.system}.default
-    llamaPackages.llama-cpp
+    #llamaPackages.llama-cpp
     lldb
     lsp-ai
     rust-analyzer

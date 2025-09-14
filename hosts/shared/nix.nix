@@ -47,8 +47,8 @@
       builders-use-substitutes = true;
       download-buffer-size = 524288000;
       trusted-users = ["root" "@wheel"];
-      cores = 6;
-      max-jobs = 2;
+      cores = 12;
+      max-jobs = 6;
       # configure cache endpoints
       sandbox = true;
       substituters = [

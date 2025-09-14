@@ -87,7 +87,7 @@
     hardware.nvidia.enable = true;
     steam.enable = true;
 
-    ai.enable = false;
+    #ai.enable = true;
 
     virtualization = {
       docker = {

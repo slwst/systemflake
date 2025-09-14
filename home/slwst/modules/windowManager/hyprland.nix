@@ -224,7 +224,8 @@ in {
 
           # Applications
           "$mod ALT, e, exec, $terminal --hold -e ${pkgs.yazi}/bin/yazi"
-          "$mod ALT, f, exec, ${pkgs.firefox}/bin/firefox"
+          #"$mod ALT, f, exec, ${pkgs.firefox}/bin/firefox"
+          "$mod ALT, f, exec, firefox"
           "$mod ALT, v, exec, pkill pavucontrol || pavucontrol"
           "$mod, d, exec, pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
           #"$mod ALT, r, exec, pkill anyrun || ${pkgs.anyrun}/bin/anyrun"
@@ -270,7 +271,8 @@ in {
           "blur, waybar"
         ];
         workspace = [
-          "name:󰈹, on-created-empty:${pkgs.firefox}/bin/firefox, monitor:HDMI-A-1, default:true"
+          #"name:󰈹, on-created-empty:${pkgs.firefox}/bin/firefox, monitor:HDMI-A-1, default:true"
+          "name:󰈹, on-created-empty:firefox, monitor:HDMI-A-1, default:true"
           "name:, on-created-empty:kitty, monitor:DP-1, default:true"
           "name:, on-created-empty:kitty --session sysmon.session, monitor:HDMI-A-1, default:true"
           "name:, on-created-empty:steam, monitor:DP-1"

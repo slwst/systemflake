@@ -15,7 +15,7 @@
     gsettings-desktop-schemas
     appimage-run
     bandwhich
-    blender
+    blender-bin
     bluetuith
     bottles
     brave
@@ -64,6 +64,7 @@
     neo
     neofetch
     nethogs
+    net-tools
     nitch
     nvitop
     obs-studio

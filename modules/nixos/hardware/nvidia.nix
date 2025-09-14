@@ -45,7 +45,11 @@ in {
       PROTON_ENABLE_NGX_UPDATER = "1";
       PROTON_ENABLE_NVAPI = "1";
     };
-    environment.systemPackages = with pkgs; [ vulkan-validation-layers nvtopPackages.nvidia ];
+    environment.systemPackages = with pkgs; [
+      vulkan-validation-layers
+      nvtopPackages.nvidia
+      cudatoolkit
+      ];
 
     hardware = {
     /*
