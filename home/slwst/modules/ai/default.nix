@@ -23,10 +23,10 @@ in {
       ];
       */
     };
-    /*
     home.packages = with pkgs; [
+      claude-code
+      claude-monitor
       gemini-cli-bin
     ];
-    */
   };
 }

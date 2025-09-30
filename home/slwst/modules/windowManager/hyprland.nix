@@ -232,11 +232,11 @@ in {
           #"$mod ALT, n, exec, swaync-client -t -sw"
 
           # Clipboard
-          "$mod ALT, v, exec, pkill fuzzel || cliphist list | fuzzel --no-fuzzy --dmenu | cliphist decode | wl-copy"
+          "$mod CTRL_ALT, v, exec, pkill fuzzel || cliphist list | fuzzel --no-fuzzy --dmenu | cliphist decode | wl-copy"
 
           # Screencapture
-          #"$mod, S, exec, ${pkgs.grim}/bin/grim | wl-copy"
-          #"$mod SHIFT+ALT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | ${pkgs.swappy}/bin/swappy -f -"
+          "$mod, s, exec, ${pkgs.grim}/bin/grim | wl-copy"
+          "$mod SHIFT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | wl-copy"
 
         ];
         bindm = [
@@ -257,6 +257,7 @@ in {
         ];
         windowrule = [
           "float, class:org.pulseaudio.pavucontrol"
+          "float, class:xdg-desktop-portal-gtk"
           "size 1024 576, class:org.pulseaudio.pavucontrol"
           "noblur on, class:steam"
           "opacity 1.0, class:steam"
@@ -265,6 +266,7 @@ in {
           "tile, title:EVE"
           "opaque, title:(.*)(EVE)(.*)$"
           "opaque, title:(.*)(Firefox)$"
+          "opaque, title:(.*)(Spotify)(.*)$"
         ];
 
         layerrule = [

@@ -24,10 +24,12 @@
     coreutils
     d2
     dconf
+    dbeaver-bin
     dig
     (discord.override {
       withOpenASAR = true;
     })
+    dive
     dualsensectl
     fd
     ffmpeg-full
@@ -82,7 +84,8 @@
     rsync
     session-desktop
     slack
-    spotifywm
+    spotify
+    spotify-tray
     strace
     #stress
     s-tui

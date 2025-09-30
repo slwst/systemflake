@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   gtk = {
     enable = true;
+    colorScheme = "dark";
     /*
     theme = {
       name = "Catppuccin-Frappe-Standard-Teal-Dark";

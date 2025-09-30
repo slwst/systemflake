@@ -41,6 +41,7 @@ in {
         PATH = [
           "\${XDG_BIN_HOME}"
         ];
+        __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = 1;
       };
 
       systemPackages = with pkgs; [

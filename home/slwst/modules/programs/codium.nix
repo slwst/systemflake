@@ -8,6 +8,10 @@
       extensions = [
         pkgs.vscode-extensions.catppuccin.catppuccin-vsc
       ];
+      userSettings = {
+        "editor.fontFamily" = "VictorMono Nerd Font Mono";
+        "editor.fontSize" = 16;
+      };
     };
   };
 }
