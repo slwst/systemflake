@@ -8,6 +8,8 @@
     #llama-cpp.url = "github:ggerganov/llama.cpp";
     catppuccin.url = "github:catppuccin/nix";
 
+    eve-preview-manager.url = "github:h0lylag/EVE-Preview-Manager";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

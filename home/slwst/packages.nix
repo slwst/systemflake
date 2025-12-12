@@ -31,6 +31,7 @@
     })
     dive
     dualsensectl
+    inputs.eve-preview-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     fd
     ffmpeg-full
     #freecad
@@ -51,6 +52,7 @@
     imagemagick
     jq
     kicad #currently broken in unstable
+    krita
     libpng
     librecad
     libreoffice-fresh

@@ -51,6 +51,7 @@ in {
         protontricks
         lutris
         mangohud
+        steamtinkerlaunch
         wine
         wine64
         winetricks
