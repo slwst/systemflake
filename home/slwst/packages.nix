@@ -40,7 +40,6 @@
     ghidra
     #gimp
     glava
-    glxinfo
     gucharmap
     gnome-power-manager
     nautilus
@@ -62,6 +61,7 @@
     mame
     mangohud
     mermaid-cli
+    mesa-demos
     mongodb-compass
     mpv
     mumble
@@ -77,7 +77,6 @@
     pavucontrol
     playerctl
     plantuml
-    protonup
     pulseaudio
     psmisc
     inputs.pyfa.packages.${system}.pyfa

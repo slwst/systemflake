@@ -10,7 +10,7 @@
       inter
       (google-fonts.override {fonts = ["Nunito"];}).out
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
     ];
     fontconfig = {
       enable = true;

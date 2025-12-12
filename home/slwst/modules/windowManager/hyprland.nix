@@ -256,21 +256,38 @@ in {
           ", XF86AudioNext, exec, playerctl next"
         ];
         windowrule = [
+          "match:class org.pulseaudio.pavucontrol, float on"
+          "match:class xdg-desktop-portal-gtk, float on"
+          "match:class org.pulseaudio.pavucontrol, size 1024 1024"
+          "match:class steam, no_blur on"
+          "match:class steam, opacity 1.0"
+          "match:class firefox no_blur on"
+          "match:class firefox opacity 1.0"
+          "match:title EVE, tile on"
+          "match:title EVE, no_blur on"
+          "match:title EVE, opacity 1.0"
+          "match:title (.*)(EVE)(.*)$, opaque on"
+          "match:title (.*)(Firefox)$, opaque on"
+          "match:title (.*)(Spotify)(.*)$, opaque on"
+        ];
+        /*
+        windowrule = [
           "float, class:org.pulseaudio.pavucontrol"
           "float, class:xdg-desktop-portal-gtk"
           "size 1024 576, class:org.pulseaudio.pavucontrol"
-          "noblur on, class:steam"
+          "no_blur on, class:steam"
           "opacity 1.0, class:steam"
-          "noblur on, class:firefox"
+          "no_blur on, class:firefox"
           "opacity 1.0, class:firefox"
           "tile, title:EVE"
           "opaque, title:(.*)(EVE)(.*)$"
           "opaque, title:(.*)(Firefox)$"
           "opaque, title:(.*)(Spotify)(.*)$"
         ];
+        */
 
         layerrule = [
-          "blur, waybar"
+          "match:namespace waybar, blur on"
         ];
         workspace = [
           #"name:󰈹, on-created-empty:${pkgs.firefox}/bin/firefox, monitor:HDMI-A-1, default:true"

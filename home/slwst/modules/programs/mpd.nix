@@ -30,7 +30,7 @@
     };
   };
 
-  home.packages = with pkgs; [mpc_cli];
+  home.packages = with pkgs; [mpc];
 
   programs.ncmpcpp = {
     enable = false;

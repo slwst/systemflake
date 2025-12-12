@@ -45,7 +45,7 @@ in {
       };
 
       systemPackages = with pkgs; [
-        protonup
+        protonup-ng
         steamcmd
         SDL2
         protontricks

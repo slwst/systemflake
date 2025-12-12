@@ -210,10 +210,8 @@ in
     rustfmt
     selene
     shellcheck
-    sumneko-lua-language-server
     texlab
     uncrustify
-    nodePackages.jsonlint
     nodePackages.prettier
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
