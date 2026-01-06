@@ -37,7 +37,7 @@
       package = pkgs.bluez;
     };
     i2c.enable = true;
-    openrazer.enable = true;
+    openrazer.enable = false;
 
   };
 
@@ -87,6 +87,8 @@
     hardware.nvidia.enable = true;
     steam.enable = true;
 
+    #ai.enable = true;
+
     virtualization = {
       docker = {
         enable = true;
@@ -101,8 +103,12 @@
       };
     };
 
-    windowManager.i3 = {
+    windowManager.hyprland = {
       enable = true;
+    };
+
+    windowManager.i3 = {
+      enable = false;
       layout = "us";
     };
     windowManager.sway = {

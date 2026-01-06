@@ -5,10 +5,10 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.desktop.services.waybar;
+  cfg = config.modules.desktop.services.waybar-sway;
 in {
-  options.modules.desktop.services.waybar = {
-    enable = mkEnableOption "Adds waybar for more bar in your way";
+  options.modules.desktop.services.waybar-sway = {
+    enable = mkEnableOption "Adds waybar for more bar in your sway";
   };
 
   config = mkIf cfg.enable ({

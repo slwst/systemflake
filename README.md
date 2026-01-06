@@ -1,10 +1,15 @@
 # dotfiles
 
-* 🖥 X11 / i3wm / lightdm
-* 🪟 polybar / rofi / dunst
+## NixOS v26.05 Yarara
+
+* 🖥 Wayland / hyprland / sddm
+* 🪟 waybar / wofi / dunst
 * 🐚 kitty / fish / starship
 * ⚡ libvirtd / docker / podman
 * 🏠 homemanager
+optional modules for:
+- 🖥 X11 / i3wm / lightdm
+- 🪟 polybar / rofi / dunst
 
 ## 📦 Contents
 
@@ -19,7 +24,7 @@
     - [shell](home/slwst/modules/programs) 🐟🚀 my trusty fish+starship config plus friends
     - [windowManager](home/slwst/modules/programs) 🍚 for i3wm/gtk and polybar
 - [hosts](hosts)
-    - [epsilon](hosts/epsilon) ϵ i9-12900KF (24) @ 5.100GHz / RTX 2080 SUPER / 32gb
+    - [epsilon](hosts/epsilon) ϵ i9-12900KF (24) @ 5.100GHz / RTX 4080 / 32gb
     - [nixie](hosts/nixie) - VM for experimentation
 
 ## Fresh Install
@@ -43,4 +48,4 @@ excellent [yubikey resource](https://github.com/drduh/YubiKey-Guide)
 
 This repository is a direct result of taking apart and putting back together
 the dotfile repositories provided by @rxyhm and @sioodmy while learning nix and
-nixOs.  All credit for anything resembling coherent code goes to them 💕
+NixOS.  All credit for anything resembling coherent code goes to them 💕

@@ -13,7 +13,7 @@ in {
   };
 
   config = mkIf cfg.enable ({ 
-    modules.desktop.services.waybar.enable = true;
+    modules.desktop.services.waybar-sway.enable = true;
     modules.desktop.services.swaylock.enable = true;
     home.packages = with pkgs; mkMerge [
       # Basic
@@ -197,7 +197,7 @@ in {
           # Screenshots (Clipboard)
           "Ctrl+Print" = "exec --no-startup-id maim | xclip -selection clipboard -t image/png";
           "Ctrl+${modifier}+Print" = "exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png";
-          "Ctrl+Shift+Print" = "exec --no-startup-id maim --select | xclip -selection clipboard -t image/png";
+          "Ctrl+Shift+Print" = "exec --no-startup-id grim -g \"$(slurp)\" - | wl-copy";
 
           # Blink window with focus
           "${modifier}+z" = "exec i3-msg border pixel 1";
@@ -208,20 +208,32 @@ in {
   programs.wofi.enable = true;
   services.kanshi = {
     enable = true;
-    profiles.default.outputs = [
-      {
-        criteria = "Ancor Communications Inc ROG PG348Q #ASPjnRq62OXd";
-        mode = "3440x1440@100Hz";
-        position = "0,0";
-        adaptiveSync = true;
-      }
-      {
-        criteria = "LG Electronics 27EA83R 0x00000101";
-        mode = "2560x1440@60Hz";
-        position = "3440,0";
-      }
-    ];
-  };
+      settings = [
+        { profile.name = "default";
+          profile.outputs = [
+            {
+              criteria = "ASUSTek COMPUTER INC PG39WCDM S5LMTF202563";
+              mode = "3440x1440@240Hz";
+              position = "0,0";
+              adaptiveSync = true;
+            }
+            /*
+            {
+              criteria = "Ancor Communications Inc ROG PG348Q #ASPjnRq62OXd";
+              mode = "3440x1440@100Hz";
+              position = "0,0";
+              adaptiveSync = true;
+            }
+            */
+            {
+              criteria = "LG Electronics 27EA83R 0x01010101";
+              mode = "2560x1440@60Hz";
+              position = "3440,0";
+            }
+          ];
+        }
+      ];
+    };
   });
-  }
+}
  

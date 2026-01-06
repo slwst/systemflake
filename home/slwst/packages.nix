@@ -5,6 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
+    aider-chat
     alsa-lib
     alsa-plugins
     alsa-tools
@@ -14,7 +15,7 @@
     gsettings-desktop-schemas
     appimage-run
     bandwhich
-    blender
+    blender-bin
     bluetuith
     bottles
     brave
@@ -23,28 +24,35 @@
     coreutils
     d2
     dconf
+    dbeaver-bin
     dig
     (discord.override {
       withOpenASAR = true;
     })
+    dive
+    dualsensectl
+    inputs.eve-preview-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     fd
     ffmpeg-full
     #freecad
     fzf
     gh
-    gimp
+    ghidra
+    #gimp
     glava
-    glxinfo
+    glib
     gucharmap
     gnome-power-manager
     nautilus
+    nh
     sushi
     goverlay
     google-cloud-sdk
     kubernetes-helm
     imagemagick
     jq
-    #kicad #currently broken in unstable
+    kicad #currently broken in unstable
+    krita
     libpng
     librecad
     libreoffice-fresh
@@ -54,11 +62,14 @@
     mame
     mangohud
     mermaid-cli
+    mesa-demos
     mongodb-compass
     mpv
     mumble
     neo
     neofetch
+    nethogs
+    net-tools
     nitch
     nvitop
     obs-studio
@@ -67,20 +78,20 @@
     pavucontrol
     playerctl
     plantuml
-    protonup
     pulseaudio
     psmisc
     inputs.pyfa.packages.${system}.pyfa
-    razergenie
+    #razergenie
     ripgrep
     rsync
     session-desktop
     slack
-    spotifywm
+    spotify
+    spotify-tray
     strace
     #stress
     s-tui
-    teamspeak_client
+    #teamspeak_client # qtwebengine insecure
     tree
     ttyper
     unzip
@@ -90,7 +101,6 @@
     xdg-user-dirs
     xdg-utils
     yubikey-personalization
-    yubikey-personalization-gui
     yubico-piv-tool
   ];
 }

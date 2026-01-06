@@ -1,12 +1,17 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    enableExtensionUpdateCheck = true;
-    enableUpdateCheck = true;
     package = pkgs.vscodium-fhs;
-
-    extensions = [
-      pkgs.vscode-extensions.catppuccin.catppuccin-vsc
-    ];
+    profiles.default = {
+      enableExtensionUpdateCheck = true;
+      enableUpdateCheck = true;
+      extensions = [
+        pkgs.vscode-extensions.catppuccin.catppuccin-vsc
+      ];
+      userSettings = {
+        "editor.fontFamily" = "VictorMono Nerd Font Mono";
+        "editor.fontSize" = 16;
+      };
+    };
   };
 }

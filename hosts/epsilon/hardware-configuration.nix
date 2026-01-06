@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -63,6 +62,12 @@
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
   };
+
+  fileSystems."/games" = {
+    device = "/dev/disk/by-label/games";
+    fsType = "btrfs";
+    options = ["compress=zstd" "noatime" "ssd" "space_cache=v2"];
+  };
 #       Option "AllowIndirectGXProtocol" "off"
   services.xserver = {
     screenSection = ''
@@ -71,9 +76,10 @@
     '';
     xrandrHeads = [
       {
-        output = "DP-0";
+        output = "DP-1";
         primary = true;
       }
+      "HDMI-A-1"
     ];
   };
 

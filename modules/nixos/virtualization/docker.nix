@@ -26,7 +26,6 @@ in {
 
     virtualisation.docker = {
       enable = true;
-      enableNvidia = cfg.enableNvidia;
     };
   };
 }

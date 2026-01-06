@@ -19,7 +19,7 @@
 
   programs = {
     dconf.enable = true;
-    nm-applet.enable = true;
+    nm-applet.enable = false;
     seahorse.enable = true;
   };
 

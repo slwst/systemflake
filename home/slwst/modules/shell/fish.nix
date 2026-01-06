@@ -30,10 +30,11 @@
       gitignore = "curl -sL https://gitignore.io/api/$argv";
       starship_transient_prompt_func = "starship module character";
       starship_transient_rprompt_func = "starship module time";
-      dots = "hx ~/.dotfiles";
+      dots = "hx ~/.systemflake";
       goflake = "nix flake init -t github:nix-community/gomod2nix#app";
-      nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#";
-      nrsi = "sudo nixos-rebuild switch --flake ~/.dotfiles# --impure";
+      nrs = "sudo nixos-rebuild switch --flake ~/.systemflake#";
+      nrsi = "sudo nixos-rebuild switch --flake ~/.systemflake# --impure";
+      nhoss = "nh os switch ~/.systemflake#";
     };
     shellAliases = {
       cat = "bat";

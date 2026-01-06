@@ -12,6 +12,8 @@ in {
   };
 
   config = mkIf cfg.enable ({
+      services.polybar.enable=true;
+      services.picom.enable=true;
       xsession.windowManager.i3 = {
         enable = true;
         package = pkgs.i3-gaps;

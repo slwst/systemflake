@@ -12,6 +12,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+
     # Load modules on boot
     boot.kernelModules = [
       "nvidia"
@@ -44,7 +45,11 @@ in {
       PROTON_ENABLE_NGX_UPDATER = "1";
       PROTON_ENABLE_NVAPI = "1";
     };
-    environment.systemPackages = with pkgs; [ vulkan-validation-layers ];
+    environment.systemPackages = with pkgs; [
+      vulkan-validation-layers
+      nvtopPackages.nvidia
+      cudatoolkit
+      ];
 
     hardware = {
     /*
@@ -60,6 +65,8 @@ in {
         #setLdLibraryPath = true;
       };
       */
+      graphics.enable = true;
+      nvidia-container-toolkit.enable = true;
       nvidia = {
         forceFullCompositionPipeline = true;
         modesetting.enable = true;

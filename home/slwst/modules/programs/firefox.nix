@@ -10,9 +10,11 @@
 
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-bin;
     profiles = {
       slwst = {
         id = 0;
+        extensions.force = true;
         settings = {
           "general.smoothScroll" = true;
           "gfx.canvas.accelerated" = true;

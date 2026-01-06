@@ -1,11 +1,9 @@
 {
-  config,
-  outputs,
-  pkgs,
-  lib,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.catppuccin.homeModules.catppuccin
     ./home.nix
     ./packages.nix
 
@@ -13,9 +11,13 @@
     ./modules/windowManager
     ./modules/programs
     ./modules/desktop
+    ./modules/ai
   ];
   config.modules = {
-    windowManager.i3.enable = true;
+    windowManager.hyprland.enable = true;
+    windowManager.i3.enable = false;
     windowManager.sway.enable = false;
+
+    ai.enable = true;
   };
 }

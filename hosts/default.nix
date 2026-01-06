@@ -5,6 +5,7 @@
 }: let
   sharedModules =
     [
+      inputs.catppuccin.nixosModules.catppuccin
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
@@ -12,6 +13,7 @@
           useUserPackages = true;
           extraSpecialArgs = {inherit inputs outputs;};
           users.slwst = ../home/slwst;
+          backupFileExtension = "bak";
         };
       }
     ]

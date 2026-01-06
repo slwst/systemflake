@@ -12,19 +12,23 @@ in {
   };
 
   config = mkIf cfg.enable {
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = false;
       protontricks.enable = true;
-      gamescopeSession.enable = false;
+      gamescopeSession.enable = true;
       extraPackages = with pkgs; [
         mumble
-        #gamescope
         openssl_1_1
       ];
     };
     programs.gamemode.enable = true;
+    hardware.steam-hardware.enable = true;
 
     boot.kernelParams = [
       "split_lock_detect=off"
@@ -37,14 +41,17 @@ in {
         PATH = [
           "\${XDG_BIN_HOME}"
         ];
+        __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = 1;
       };
 
       systemPackages = with pkgs; [
-        protonup
+        protonup-ng
         steamcmd
         SDL2
         protontricks
         lutris
+        mangohud
+        steamtinkerlaunch
         wine
         wine64
         winetricks
