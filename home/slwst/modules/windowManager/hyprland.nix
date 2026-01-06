@@ -238,6 +238,12 @@ in {
           "$mod, s, exec, ${pkgs.grim}/bin/grim | wl-copy"
           "$mod SHIFT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | wl-copy"
 
+          # Mumble
+          "$mod SHIFT, C, exec, ${pkgs.glib}/bin/gdbus call -e -d net.sourceforge.mumble.mumble -o / -m net.sourceforge.mumble.Mumble.startTalking"
+        ];
+        bindr = [
+          # Mumble
+          "$mod SHIFT, C, exec, ${pkgs.glib}/bin/gdbus call -e -d net.sourceforge.mumble.mumble -o / -m net.sourceforge.mumble.Mumble.stopTalking"
         ];
         bindm = [
             "$mod, mouse:272, movewindow"
@@ -259,8 +265,7 @@ in {
           "match:class org.pulseaudio.pavucontrol, float on"
           "match:class xdg-desktop-portal-gtk, float on"
           "match:class org.pulseaudio.pavucontrol, size 1024 1024"
-          "match:class steam, no_blur on"
-          "match:class steam, opacity 1.0"
+          "match:class steam, opaque on"
           "match:class firefox no_blur on"
           "match:class firefox opacity 1.0"
           "match:title EVE, tile on"

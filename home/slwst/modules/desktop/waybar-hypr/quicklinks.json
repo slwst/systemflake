@@ -19,13 +19,19 @@
     "on-click": "kitty",
     "tooltip-format": "Terminal"
   },
+  "custom/quicklink5": {
+    "format": "🤐",
+    "on-click": "gdbus call -e -d net.sourceforge.mumble.mumble -o / -m net.sourceforge.mumble.Mumble.stopTalking",
+    "tooltip-format": "Terminal"
+  },
   "group/quicklinks": {
     "orientation": "horizontal",
     "modules": [
       "custom/quicklink1",
       "custom/quicklink2",
       "custom/quicklink3",
-      "custom/quicklink4"
+      "custom/quicklink4",
+      "custom/quicklink5"
     ]
   }
 }

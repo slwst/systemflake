@@ -23,6 +23,7 @@ in {
       ]
       ++ ifTheyExist [
         "docker"
+        "gamemode"
         "git"
         "kvm"
         "libvirt"

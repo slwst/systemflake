@@ -40,6 +40,7 @@
     ghidra
     #gimp
     glava
+    glib
     gucharmap
     gnome-power-manager
     nautilus
