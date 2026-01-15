@@ -43,6 +43,7 @@
     glib
     gucharmap
     gnome-power-manager
+    localsend
     nautilus
     nh
     sushi
@@ -80,7 +81,6 @@
     plantuml
     pulseaudio
     psmisc
-    inputs.pyfa.packages.${system}.pyfa
     #razergenie
     ripgrep
     rsync

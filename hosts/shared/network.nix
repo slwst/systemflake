@@ -8,7 +8,8 @@
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [22 80 5432 6443 8000 8080 11434];
+      allowedUDPPorts = [53317];
+      allowedTCPPorts = [22 80 5432 6443 8000 8080 11434 53317];
       allowPing = true;
       logReversePathDrops = true;
     };

@@ -26,9 +26,6 @@
       inputs.rust-overlay.follows = "rust-overlay";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    pyfa = {
-      url = "path:/home/slwst/dev/nix/pyfa";
-    };
     blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/1.0.18";
   };
   outputs = {

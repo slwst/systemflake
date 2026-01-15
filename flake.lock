@@ -596,22 +596,6 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_7": {
-      "locked": {
-        "lastModified": 1742422364,
-        "narHash": "sha256-mNqIplmEohk5jRkqYqG19GA8MbQ/D4gQSK0Mu4LvfRQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a84ebe20c6bc2ecbcfb000a50776219f48d134cc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -635,21 +619,6 @@
         "type": "github"
       }
     },
-    "pyfa": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_7"
-      },
-      "locked": {
-        "lastModified": 1755378382,
-        "narHash": "sha256-rZ3VT2Wf7xQZMkspwhyRFAa4AJdhuGNef3x8F+2//zQ=",
-        "path": "/home/slwst/dev/nix/pyfa",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/slwst/dev/nix/pyfa",
-        "type": "path"
-      }
-    },
     "root": {
       "inputs": {
         "blender-bin": "blender-bin",
@@ -660,7 +629,6 @@
         "hyprland": "hyprland",
         "nil": "nil",
         "nixpkgs": "nixpkgs_6",
-        "pyfa": "pyfa",
         "rust-overlay": "rust-overlay_2"
       }
     },
