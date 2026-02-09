@@ -75,7 +75,7 @@ in
           auto-format = true;
           comment-token = "//";
           #formatter.command = "${pkgs.gotools}/bin/goimports";
-          language-servers = [ "lsp-ai" "gopls" ];
+          language-servers = [ "gopls" ];
         }
         {
           name = "javascript";
@@ -83,7 +83,6 @@ in
         }
         {
           name = "markdown";
-          language-servers = [ "lsp-ai" ];
         }
         {
           name = "rust";
@@ -135,46 +134,6 @@ in
           command = "${pkgs.golangci-lint-langserver}/bin/golangci-lint-langserver";
         };
         */
-        lsp-ai = {
-          command = "lsp-ai";
-          config = {
-            /*
-            completion = {
-              model = "completionModel";
-              parameters = {
-                max_tokens = 32;
-                max_context = 1024;
-                fim = {
-                  start = "<fim_prefix>";
-                  middle = "<fim_suffix>";
-                  end = "<fim_middle>";
-                };
-              };
-            };
-            */
-            memory = {
-              file_store = { };
-            };
-            /*
-            models = {
-              completionModel = {
-                type = "llama_cpp";
-                repository = "stabilityai/stable-code-3b";
-                name = "stable-code-3b-Q5_K_M.gguf";
-                n_ctx = 2048;
-                n_gpu_layers = 1000;
-              };
-              chatModel = {
-                type = "llama_cpp";
-                repository = "bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF";
-                name = "DeepSeek-R1-Distill-Qwen-32B-IQ4_XS.gguf";
-                n_ctx = 2048;
-                n_gpu_layers = 1000;
-              };
-            };
-            */
-          };
-        };
         nil = {
           command = lib.getExe pkgs.nil;
           config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
@@ -205,7 +164,6 @@ in
     #inputs.llama-cpp.packages.${pkgs.system}.default
     #llamaPackages.llama-cpp
     lldb
-    lsp-ai
     rust-analyzer
     rustfmt
     selene

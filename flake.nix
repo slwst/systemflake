@@ -26,9 +26,6 @@
       inputs.rust-overlay.follows = "rust-overlay";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    pyfa = {
-      url = "path:/home/slwst/dev/nix/pyfa";
-    };
     blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/1.0.18";
   };
   outputs = {
@@ -60,7 +57,6 @@
         blender-bin.overlays.default
       #(inputs.llama-cpp.overlays.default)
       (final: prev: {
-        #lsp-ai = final.callPackage ./pkgs/lsp-ai { };
         blender-bin = blender-bin.packages.${system}.default;
       })
       ];

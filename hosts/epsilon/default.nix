@@ -103,7 +103,12 @@
       };
     };
 
+    windowManager.sddm.enable = true;
+
     windowManager.hyprland = {
+      enable = true;
+    };
+    windowManager.plasma6 = {
       enable = true;
     };
 

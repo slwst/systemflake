@@ -43,10 +43,12 @@
     glib
     gucharmap
     gnome-power-manager
+    localsend
     nautilus
     nh
     sushi
     goverlay
+    google-chrome
     google-cloud-sdk
     kubernetes-helm
     imagemagick
@@ -80,7 +82,6 @@
     plantuml
     pulseaudio
     psmisc
-    inputs.pyfa.packages.${system}.pyfa
     #razergenie
     ripgrep
     rsync
