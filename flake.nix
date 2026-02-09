@@ -57,7 +57,6 @@
         blender-bin.overlays.default
       #(inputs.llama-cpp.overlays.default)
       (final: prev: {
-        #lsp-ai = final.callPackage ./pkgs/lsp-ai { };
         blender-bin = blender-bin.packages.${system}.default;
       })
       ];

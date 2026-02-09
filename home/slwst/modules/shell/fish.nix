@@ -28,8 +28,8 @@
         end
       '';
       gitignore = "curl -sL https://gitignore.io/api/$argv";
-      starship_transient_prompt_func = "starship module character";
-      starship_transient_rprompt_func = "starship module time";
+      #starship_transient_prompt_func = "starship module character";
+      #starship_transient_rprompt_func = "starship module time";
       dots = "hx ~/.systemflake";
       goflake = "nix flake init -t github:nix-community/gomod2nix#app";
       nrs = "sudo nixos-rebuild switch --flake ~/.systemflake#";
@@ -44,9 +44,12 @@
       k3sUse = "set -l KUBECONFIG /etc/rancher/k3s/k3s.yaml";
       xc = "xclip -selection clipboard";
     };
-    interactiveShellInit = ''
+    /*
+      enable_transience
       # enable transient prompt with starship
-        bind \r transient_execute
+      bind \r transient_execute
+    */
+    interactiveShellInit = ''
       # direnv
       direnv hook fish | source
     '';

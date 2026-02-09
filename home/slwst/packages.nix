@@ -48,6 +48,7 @@
     nh
     sushi
     goverlay
+    google-chrome
     google-cloud-sdk
     kubernetes-helm
     imagemagick
