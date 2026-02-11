@@ -1,6 +1,7 @@
 {
   imports = [
     ./bottom.nix
+    ./chromium.nix
     ./codium.nix
     #./discord.nix
     ./firefox.nix

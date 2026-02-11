@@ -48,7 +48,6 @@
     nh
     sushi
     goverlay
-    google-chrome
     google-cloud-sdk
     kubernetes-helm
     imagemagick
@@ -101,6 +100,7 @@
     vlc
     xdg-user-dirs
     xdg-utils
+    yubikey-manager
     yubikey-personalization
     yubico-piv-tool
   ];

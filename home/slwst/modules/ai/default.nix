@@ -27,6 +27,7 @@ in {
       claude-code
       claude-monitor
       gemini-cli-bin
+      tmux
     ];
   };
 }
