@@ -10,6 +10,8 @@
 
     eve-preview-manager.url = "github:h0lylag/EVE-Preview-Manager";
 
+    gastown.url = "github:steveyegge/gastown";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

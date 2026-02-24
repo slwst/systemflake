@@ -31,6 +31,7 @@
     })
     dive
     dualsensectl
+    dolt
     inputs.eve-preview-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     fd
     ffmpeg-full

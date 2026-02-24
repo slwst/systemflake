@@ -13,6 +13,7 @@
     '';
     udev.packages = with pkgs; [
       gnome-settings-daemon
+      keychron-udev-rules
       yubikey-personalization
       game-devices-udev-rules
     ];
