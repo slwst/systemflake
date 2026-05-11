@@ -17,8 +17,6 @@
     bandwhich
     blender-bin
     bluetuith
-    bottles
-    brave
     cached-nix-shell
     nemo
     coreutils
@@ -48,13 +46,12 @@
     nh
     sushi
     goverlay
-    google-chrome
     google-cloud-sdk
     kubernetes-helm
     imagemagick
     jq
     kicad #currently broken in unstable
-    krita
+    #krita
     libpng
     librecad
     libreoffice-fresh
@@ -101,6 +98,7 @@
     vlc
     xdg-user-dirs
     xdg-utils
+    yubikey-manager
     yubikey-personalization
     yubico-piv-tool
   ];

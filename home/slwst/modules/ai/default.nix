@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 with lib; let
@@ -24,9 +25,11 @@ in {
       */
     };
     home.packages = with pkgs; [
+      #inputs.gastown.packages.${system}.default
       claude-code
       claude-monitor
       gemini-cli-bin
+      tmux
     ];
   };
 }
