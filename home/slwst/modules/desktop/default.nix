@@ -10,6 +10,6 @@
     ./polybar
     ./waybar-hypr
   ];
-  services.easyeffects.enable = true;
+  services.easyeffects.enable = false;
 }
 

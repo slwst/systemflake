@@ -17,8 +17,6 @@
     bandwhich
     blender-bin
     bluetuith
-    bottles
-    brave
     cached-nix-shell
     nemo
     coreutils
@@ -31,7 +29,6 @@
     })
     dive
     dualsensectl
-    dolt
     inputs.eve-preview-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     fd
     ffmpeg-full
@@ -54,7 +51,7 @@
     imagemagick
     jq
     kicad #currently broken in unstable
-    krita
+    #krita
     libpng
     librecad
     libreoffice-fresh

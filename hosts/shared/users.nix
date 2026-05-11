@@ -10,7 +10,8 @@ in {
   users.users.slwst = {
     description = "slwst";
     isNormalUser = true;
-    shell = pkgs.fish;
+    #shell = pkgs.fish;
+    shell = pkgs.zsh;
     initialPassword = "butts";
     extraGroups =
       [

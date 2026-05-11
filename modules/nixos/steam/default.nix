@@ -71,6 +71,7 @@ in {
 
       systemPackages = with pkgs; [
         protonup-ng
+        game-devices-udev-rules
         gamescope-wsi
         steamcmd
         SDL2
