@@ -15,6 +15,7 @@
     gsettings-desktop-schemas
     appimage-run
     bandwhich
+    bottles
     blender-bin
     bluetuith
     cached-nix-shell
@@ -29,6 +30,8 @@
     })
     dive
     dualsensectl
+    ethtool
+    eva
     inputs.eve-preview-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     fd
     ffmpeg-full
@@ -41,6 +44,7 @@
     glib
     gucharmap
     gnome-power-manager
+    kalker
     localsend
     nautilus
     nh
@@ -61,12 +65,11 @@
     mame
     mangohud
     mermaid-cli
-    mesa-demos
     mongodb-compass
     mpv
     mumble
     neo
-    neofetch
+    fastfetch
     nethogs
     net-tools
     nitch

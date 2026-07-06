@@ -75,7 +75,6 @@ in {
         gamescope-wsi
         steamcmd
         SDL2
-        lutris
         mangohud
         steamtinkerlaunch
         wine

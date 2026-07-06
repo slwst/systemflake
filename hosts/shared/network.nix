@@ -4,7 +4,7 @@
 }: {
   networking = {
     networkmanager = {
-      enable = true;
+      enable = false;
     };
     firewall = {
       enable = true;
