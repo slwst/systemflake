@@ -44,6 +44,7 @@
     glib
     gucharmap
     gnome-power-manager
+    inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
     kalker
     localsend
     nautilus
@@ -83,9 +84,9 @@
     pulseaudio
     psmisc
     #razergenie
+    qsynth
     ripgrep
     rsync
-    session-desktop
     slack
     spotify
     spotify-tray
@@ -99,6 +100,7 @@
     usbutils
     viu
     vlc
+    wirelesstools
     xdg-user-dirs
     xdg-utils
     yubikey-manager

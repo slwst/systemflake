@@ -21,6 +21,7 @@ in {
         "video"
         "input"
         "networkmanager"
+        "disk"
       ]
       ++ ifTheyExist [
         "docker"

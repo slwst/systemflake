@@ -10,6 +10,11 @@
 
     eve-preview-manager.url = "github:h0lylag/EVE-Preview-Manager";
 
+    herdr = {
+      url = "github:ogulcancelik/herdr/v0.7.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +38,7 @@
     nixpkgs,
     catppuccin,
     blender-bin,
+    herdr,
     ...
   } @ inputs: let
     inherit (self) outputs;
