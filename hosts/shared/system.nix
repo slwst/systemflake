@@ -8,9 +8,9 @@
       packages = with pkgs; [dconf gcr udisks2];
       enable = true;
     };
-    journald.extraConfig = ''
-      MaxRetentionSec = 3456000
-    '';
+    journald.settings.Journal = {
+      MaxRetentionSec = 3456000;
+      };
     udev.packages = with pkgs; [
       gnome-settings-daemon
       keychron-udev-rules

@@ -17,7 +17,7 @@
 #      kernelPackages = pkgs.linuxPackages_latest;
 #      kernelPackages = pkgs.linuxPackages_zen;
       #kernelPackages = pkgs.linuxPackages_xanmod_stable;
-      kernelPackages = pkgs.linuxPackages_xanmod;
+      kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     kernelParams = [
       "quiet"

@@ -60,7 +60,7 @@
 
   home.packages = with pkgs; [
     gnome-themes-extra
-    gtk-engine-murrine
-    gtk_engines
+    #gtk-engine-murrine
+    #gtk_engines
   ];
 }

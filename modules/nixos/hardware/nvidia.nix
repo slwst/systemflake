@@ -74,7 +74,7 @@ in {
 
         # should be one release behind latest or stable
         #package = config.boot.kernelPackages.nvidiaPackages.beta;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
         nvidiaSettings = true;
 
         # experimental
