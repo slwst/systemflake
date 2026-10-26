@@ -25,9 +25,7 @@
     dconf
     dbeaver-bin
     dig
-    (discord.override {
-      withOpenASAR = true;
-    })
+    discord
     dive
     dualsensectl
     ethtool
