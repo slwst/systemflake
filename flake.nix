@@ -10,6 +10,11 @@
 
     eve-preview-manager.url = "github:h0lylag/EVE-Preview-Manager";
 
+    herdr = {
+      url = "github:ogulcancelik/herdr/v0.7.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,13 +31,14 @@
       inputs.rust-overlay.follows = "rust-overlay";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/1.0.18";
+    blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/1.0.21";
   };
   outputs = {
     self,
     nixpkgs,
     catppuccin,
     blender-bin,
+    herdr,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -58,6 +64,9 @@
       #(inputs.llama-cpp.overlays.default)
       (final: prev: {
         blender-bin = blender-bin.packages.${system}.default;
+        openldap = prev.openldap.overrideAttrs {
+          doCheck = !prev.stdenv.hostPlatform.isi686;
+        };
       })
       ];
     }; 

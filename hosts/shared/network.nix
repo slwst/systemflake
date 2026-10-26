@@ -5,6 +5,10 @@
   networking = {
     networkmanager = {
       enable = true;
+      wifi = {
+        backend = "iwd";
+        powersave = false;
+      };
     };
     firewall = {
       enable = true;
@@ -12,6 +16,12 @@
       allowedTCPPorts = [22 80 5432 6443 8000 8080 11434 53317];
       allowPing = true;
       logReversePathDrops = true;
+    };
+    wireless.iwd.enable = true;
+    wireless.iwd.settings = {
+      Settings = {
+        AutoConnect = true;
+      };
     };
   };
   # finish boot before connection establishes

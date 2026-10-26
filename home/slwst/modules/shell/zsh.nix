@@ -8,6 +8,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    autosuggestion.highlight = "fg=#ff00ff,bg=cyan,bold,underline";
     syntaxHighlighting.enable = true;
 
     initContent =
@@ -34,9 +35,10 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
+        "fzf"
         "git"
       ];
     };
-
   };
+  home.shell.enableZshIntegration = true;
 }

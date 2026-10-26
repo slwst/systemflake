@@ -16,7 +16,8 @@
     # latest kernel
 #      kernelPackages = pkgs.linuxPackages_latest;
 #      kernelPackages = pkgs.linuxPackages_zen;
-      kernelPackages = pkgs.linuxPackages_xanmod_stable;
+      #kernelPackages = pkgs.linuxPackages_xanmod_stable;
+      kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     kernelParams = [
       "quiet"
@@ -29,6 +30,7 @@
     extraModprobeConfig = ''
       options usbcore use_both_schemes=y
     '';
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
   hardware = {

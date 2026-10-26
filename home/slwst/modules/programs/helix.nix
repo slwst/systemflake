@@ -91,7 +91,7 @@ in
         {
           name = "typescript";
           auto-format = true;
-          formatter.command = "${pkgs.nodePackages.prettier}/bin/prettier";
+          formatter.command = "${pkgs.prettier}/bin/prettier";
         }
       ];
       language-server = {
@@ -138,7 +138,7 @@ in
           command = lib.getExe pkgs.nil;
           config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
         };
-        typescript-language-server = with pkgs.nodePackages; {
+        typescript-language-server = with pkgs; {
           command = "${typescript-language-server}/bin/typescript-language-server";
           args = ["--stdio" "--tsserver-path=${typescript}/lib/node_modules/typescript/lib"];
         };
@@ -170,11 +170,6 @@ in
     shellcheck
     texlab
     uncrustify
-    nodePackages.prettier
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted
-    nodePackages.yaml-language-server
-    nodePackages.yarn
     cargo
   ];
 }

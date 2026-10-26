@@ -6,6 +6,7 @@
 }:
 with lib; let
   browser = ["firefox.desktop"];
+  mail = ["thunderbird.desktop"];
 
   associations = {
     "text/html" = browser;
@@ -22,12 +23,21 @@ with lib; let
     "application/x-extension-xht" = browser;
 
     "audio/*" = ["mpv.desktop"];
-    "video/*" = ["mpv.dekstop"];
-    "image/*" = ["imv.desktop"];
+    "video/*" = ["mpv.desktop"];
+    "image/*" = ["org.kde.gwenview.desktop"];
     "application/json" = browser;
-    "application/pdf" = ["org.pwmt.zathura.desktop.desktop"];
+    "application/pdf" = ["okularApplication_pdf.desktop"];
     "x-scheme-handler/spotify" = ["spotify.desktop"];
-    "x-scheme-handler/discord" = ["WebCord.desktop"];
+    "x-scheme-handler/discord" = ["discord.desktop"];
+
+    # Thunderbird and the Claude Code handler register these imperatively via
+    # xdg-mime, which replaces the home-manager symlink and breaks activation.
+    # Declaring them here keeps the file store-owned.
+    "x-scheme-handler/mailto" = mail;
+    "x-scheme-handler/mid" = mail;
+    "x-scheme-handler/net.thunderbird" = mail;
+    "message/rfc822" = mail;
+    "x-scheme-handler/claude-cli" = ["claude-code-url-handler.desktop"];
   };
 in {
   imports = [

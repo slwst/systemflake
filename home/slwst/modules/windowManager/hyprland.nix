@@ -305,7 +305,6 @@ in {
     };
     programs.eww = {
       enable = false;
-      enableFishIntegration = true;
     };
     programs.wofi.enable = true;
     services.hyprpaper = {

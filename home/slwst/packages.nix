@@ -15,6 +15,7 @@
     gsettings-desktop-schemas
     appimage-run
     bandwhich
+    bottles
     blender-bin
     bluetuith
     cached-nix-shell
@@ -24,11 +25,11 @@
     dconf
     dbeaver-bin
     dig
-    (discord.override {
-      withOpenASAR = true;
-    })
+    discord
     dive
     dualsensectl
+    ethtool
+    eva
     inputs.eve-preview-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     fd
     ffmpeg-full
@@ -41,6 +42,8 @@
     glib
     gucharmap
     gnome-power-manager
+    inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
+    kalker
     localsend
     nautilus
     nh
@@ -61,12 +64,11 @@
     mame
     mangohud
     mermaid-cli
-    mesa-demos
     mongodb-compass
     mpv
     mumble
     neo
-    neofetch
+    fastfetch
     nethogs
     net-tools
     nitch
@@ -80,9 +82,9 @@
     pulseaudio
     psmisc
     #razergenie
+    qsynth
     ripgrep
     rsync
-    session-desktop
     slack
     spotify
     spotify-tray
@@ -96,6 +98,7 @@
     usbutils
     viu
     vlc
+    wirelesstools
     xdg-user-dirs
     xdg-utils
     yubikey-manager

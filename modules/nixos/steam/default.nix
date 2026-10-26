@@ -70,12 +70,11 @@ in {
       };
 
       systemPackages = with pkgs; [
-        protonup-ng
+        protonup-rs
         game-devices-udev-rules
         gamescope-wsi
         steamcmd
         SDL2
-        lutris
         mangohud
         steamtinkerlaunch
         wine
