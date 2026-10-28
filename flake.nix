@@ -12,7 +12,7 @@
 
     # Agentic devshell: herdr, beads, openspec, claude, opencode. The agent toolchain is pinned
     # by devflake's own lock, so its nixpkgs deliberately does not follow ours.
-    devflake.url = "github:slwst/devflake";
+    devflake.url = "github:slwst/devflake/v0.2.0";
 
     home-manager = {
       url = "github:nix-community/home-manager";
