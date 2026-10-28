@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "systemflake",
+  "project_id": "55b95d19-8a45-4002-b6ca-56b0b32b8ed6"
+}

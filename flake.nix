@@ -10,10 +10,9 @@
 
     eve-preview-manager.url = "github:h0lylag/EVE-Preview-Manager";
 
-    herdr = {
-      url = "github:ogulcancelik/herdr/v0.7.5";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Agentic devshell: herdr, beads, openspec, claude, opencode. The agent toolchain is pinned
+    # by devflake's own lock, so its nixpkgs deliberately does not follow ours.
+    devflake.url = "github:slwst/devflake/v0.2.0";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -38,7 +37,6 @@
     nixpkgs,
     catppuccin,
     blender-bin,
-    herdr,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -80,13 +78,15 @@
       nixosConfigurations = import ./hosts {inherit inputs outputs;};
 
       # dev shell for (direnv)
-      devShells.${system}.default = pkgs.mkShell {
+      devShells.${system}.default = inputs.devflake.lib.mkShell {
+        inherit pkgs;
+        # herdr workspace label, and the prefix this project's agents are named with
+        name = "systemflake";
         packages = with pkgs; [
           alejandra
           git
           nix-prefetch-github
         ];
-        name = "dotfiles";
       };
 
       # use alejandra as formatter

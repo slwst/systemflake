@@ -42,7 +42,6 @@
     glib
     gucharmap
     gnome-power-manager
-    inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
     kalker
     localsend
     nautilus

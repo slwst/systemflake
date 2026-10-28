@@ -1,1 +1,13 @@
-.direnv
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
+*.gate.lock*
+
+# devflake: agent worktrees, direnv, nix build results, the beads export
+/.worktrees/
+.direnv/
+/result
+/result-*
+.beads/issues.jsonl
