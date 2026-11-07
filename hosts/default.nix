@@ -13,7 +13,6 @@
           useUserPackages = true;
           extraSpecialArgs = {inherit inputs outputs;};
           users.slwst = ../home/slwst;
-          backupFileExtension = "bak";
         };
       }
     ]
