@@ -5,7 +5,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    aider-chat
     alsa-lib
     alsa-plugins
     alsa-tools
