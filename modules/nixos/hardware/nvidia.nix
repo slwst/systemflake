@@ -38,7 +38,11 @@ in {
     */
 
     environment.variables = {
-      GBM_BACKEND = "nvidia-drm";
+      # GBM_BACKEND is deliberately unset: libgbm derives the backend name from
+      # the DRM driver and both nvidia-drm_gbm.so (64- and 32-bit) ship in
+      # /run/opengl-driver*/lib/gbm, so forcing it only leaks into sandboxes
+      # that lack the backend (seen as MESA-LOADER failures inside Steam's
+      # pressure-vessel container).
       LIBVA_DRIVER_NAME = "nvidia";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       VKD3D_CONFIG = "dxr";
@@ -68,7 +72,10 @@ in {
       graphics.enable = true;
       nvidia-container-toolkit.enable = true;
       nvidia = {
-        forceFullCompositionPipeline = true;
+        # Xorg-only: nixpkgs applies this purely as an X screen "metamodes"
+        # option, so it does nothing in a Wayland session. On X it costs OpenGL
+        # performance and delays clocking down, so leave it off.
+        forceFullCompositionPipeline = false;
         modesetting.enable = true;
         powerManagement.enable = true;
 
