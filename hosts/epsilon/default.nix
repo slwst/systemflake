@@ -24,7 +24,6 @@
     ];
 
     initrd = {
-      systemd.enable = true;
       supportedFilesystems = ["btrfs"];
     };
     extraModprobeConfig = ''

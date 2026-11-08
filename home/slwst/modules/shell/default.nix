@@ -77,5 +77,10 @@ in {
     mimeApps.enable = true;
     mimeApps.associations.added = associations;
     mimeApps.defaultApplications = associations;
+
+    # xdg-mime rewrites both of these imperatively, replacing the symlink.
+    # Overwrite them on activation instead of backing them up.
+    configFile."mimeapps.list".force = true;
+    dataFile."applications/mimeapps.list".force = true;
   };
 }

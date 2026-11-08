@@ -31,6 +31,10 @@
       gtk-xft-rgba = "rgb";
     };
 
+    # The desktop rewrites ~/.gtkrc-2.0 imperatively, replacing the symlink.
+    # Overwrite it on activation instead of backing it up.
+    gtk2.force = true;
+
     gtk2.extraConfig = ''
       gtk-xft-antialias=1
       gtk-xft-hinting=1
