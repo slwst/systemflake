@@ -102,5 +102,8 @@
     yubikey-manager
     yubikey-personalization
     yubico-piv-tool
+
+    # moza vr
+    boxflat
   ];
 }
