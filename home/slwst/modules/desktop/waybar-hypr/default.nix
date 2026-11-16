@@ -32,9 +32,11 @@ in {
           margin-left = 8;
           margin-right = 8;
           mode = "dock";
+          # HDMI-A-1 is the HTC Vive now; the desktop outputs are these three.
           output = [
             "DP-1"
-            "HDMI-A-1"
+            "DP-3"
+            "HDMI-A-2"
           ];
           modules-left = [ "group/quicklinks" "tray" "hyprland/window" ];
           modules-center = [ "hyprland/workspaces" ];
