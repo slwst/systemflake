@@ -5,4 +5,5 @@
   windowManager = import ./windowManager;
   steam = import ./steam;
   ai = import ./ai;
+  simRig = import ./simRig;
 }

@@ -87,6 +87,7 @@
 
     hardware.nvidia.enable = true;
     steam.enable = true;
+    simRig.enable = true;
 
     #ai.enable = true;
 
