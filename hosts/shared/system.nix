@@ -5,7 +5,7 @@
 }: {
   services = {
     dbus = {
-      packages = with pkgs; [dconf gcr_3 udisks2];
+      packages = with pkgs; [dconf udisks2];
       enable = true;
     };
     journald.settings.Journal = {
