@@ -590,6 +590,10 @@ in {
         # exec-once has no lua spelling; the startup event is the equivalent.
         on = [
           {_args = ["hyprland.start" (mkLuaInline "function() hl.exec_cmd(\"waybar\") end")];}
+          # kwallet ships no org.freedesktop.secrets activation file, so under
+          # Hyprland nothing starts the Secret Service the way Plasma's portal
+          # does; libsecret clients would find no provider at all.
+          {_args = ["hyprland.start" (mkLuaInline "function() hl.exec_cmd(${luaStr (lib.getExe' pkgs.kdePackages.kwallet "ksecretd")}) end")];}
           {_args = ["workspace.created" spawnOnEmptyHandler];}
         ];
       };

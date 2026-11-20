@@ -9,6 +9,12 @@
       enable = true;
       mutableKeys = true;
       mutableTrust = true;
+      # pcscd is socket-activated by the pam_u2f login probe and holds the
+      # YubiKey's CCID interface for its 60s idle timeout; route scdaemon
+      # through pcsc-lite so its internal CCID driver stops racing for it.
+      scdaemonSettings = {
+        disable-ccid = true;
+      };
       settings = {
         personal-cipher-preferences = ["AES256" "AES192" "AES"];
         personal-digest-preferences = ["SHA512" "SHA384" "SHA256"];
